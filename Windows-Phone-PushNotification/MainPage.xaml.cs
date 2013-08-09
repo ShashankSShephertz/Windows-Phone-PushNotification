@@ -13,6 +13,7 @@ namespace Windows_Phone_PushNotification
 
         ServiceAPI sp = new ServiceAPI("Your APIKey", "Your SecretKey");
         PushNotificationService pushObj = null;
+		String userId = "Your User";
         public MainPage()
         {
              HttpNotificationChannel channel;
@@ -92,8 +93,7 @@ namespace Windows_Phone_PushNotification
 
         void StoreURIWithApp42(String ChannelUri) 
         {
-            String userName = "AppUser340";
-            pushObj.StoreDeviceToken(userName, ChannelUri, this);
+            pushObj.StoreDeviceToken(userId, ChannelUri, this);
         }
 
         void App42Callback.OnException(App42Exception exception)
