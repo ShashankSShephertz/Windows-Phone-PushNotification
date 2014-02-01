@@ -48,8 +48,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="App42_WINDOWS_API_1.5">
-      <HintPath>D:\software\WP7\app42_windows_1.5\app42_windows_1.5\App42_WINDOWS_API_1.5.dll</HintPath>
+    <Reference Include="App42_WINDOWS_SDK_2.0">
+      <HintPath>..\..\..\software\WP7\@@@\App42_WINDOWS_SDK-master\2.0\App42_WINDOWS_SDK_2.0.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Interop" />
@@ -70,6 +70,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NotificationCallBack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +88,7 @@
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ABData.png" />
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

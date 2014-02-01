@@ -5,26 +5,34 @@ using Microsoft.Phone.Notification;
 using System.Text;
 using com.shephertz.app42.paas.sdk.windows;
 using com.shephertz.app42.paas.sdk.windows.push;
+using System.Collections.ObjectModel;
+using Microsoft.Phone.Shell;
 
 namespace Windows_Phone_PushNotification
 {
     public partial class MainPage : PhoneApplicationPage, App42Callback
     {
-
-        ServiceAPI sp = new ServiceAPI("Your APIKey", "Your SecretKey");
+        public ProgressIndicator indicator = new ProgressIndicator{IsVisible = true,IsIndeterminate = true,Text = "Please wait while app is loding..."};
+        
+        ServiceAPI sp = new ServiceAPI("<Your_API_KEY>","<Your_SECRET_KEY>");
         PushNotificationService pushObj = null;
-		String userId = "Your User";
+		String userId = "shahsnakshukla";
+        NotificationCallBack callback;
         public MainPage()
         {
              HttpNotificationChannel channel;
 
+             SystemTray.SetProgressIndicator(this, indicator);
+
              pushObj = sp.BuildPushNotificationService();
 
-             String channelName = "App42PushNotification";
+             String channelName = "App42PushNotificationTilest";
 
             InitializeComponent();
 
             channel = HttpNotificationChannel.Find(channelName);
+
+            callback = new NotificationCallBack();
 
             if (channel == null)
             {
@@ -32,12 +40,13 @@ namespace Windows_Phone_PushNotification
 
                 channel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(PushChannel_ChannelUriUpdated);
                 channel.ErrorOccurred += new EventHandler<NotificationChannelErrorEventArgs>(PushChannel_ErrorOccurred);
-
                 channel.ShellToastNotificationReceived += new EventHandler<NotificationEventArgs>(PushChannel_ShellToastNotificationReceived);
 
-                
                 channel.Open();
-
+                Collection<Uri> TileLocations = new Collection<Uri>();
+                //  remote images in the tile
+                TileLocations.Add(new Uri("http://api.shephertz.com/"));
+                channel.BindToShellTile(TileLocations);
                 channel.BindToShellToast();
 
             }
@@ -46,7 +55,6 @@ namespace Windows_Phone_PushNotification
                 channel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(PushChannel_ChannelUriUpdated);
                 channel.ErrorOccurred += new EventHandler<NotificationChannelErrorEventArgs>(PushChannel_ErrorOccurred);
                 channel.ShellToastNotificationReceived += new EventHandler<NotificationEventArgs>(PushChannel_ShellToastNotificationReceived);
-
                 StoreURIWithApp42(channel.ChannelUri.ToString());
 
             }
@@ -94,20 +102,43 @@ namespace Windows_Phone_PushNotification
         void StoreURIWithApp42(String ChannelUri) 
         {
             pushObj.StoreDeviceToken(userId, ChannelUri, this);
+            
         }
 
         void App42Callback.OnException(App42Exception exception)
         {
-            // here Exception is handled
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                indicator.IsVisible = false;
+            });
             Console.WriteLine(exception.ToString());
         }
 
         void App42Callback.OnSuccess(object response)
         {
-            // here success is shown
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                indicator.IsVisible = false;
+            });
             Console.WriteLine(response.ToString());
        
         }
+
+        private void SendTost(object sender, RoutedEventArgs e)
+        {
+            pushObj.SendPushToastMessageToUser(userId, "Hi...", "Shashank", "/MainPage.xaml", callback);
+        }
+
+        private void SendTile(object sender, RoutedEventArgs e)
+        {
+            Tile tileData = new Tile();
+            tileData.SetBackgroundImage("http://api.shephertz.com/images/0.1/zone-images/BPaaS.png");
+            tileData.SetCount("2");
+            tileData.SetTitle("What's up");
+            tileData.SetBackContent("Notification");
+            tileData.SetBackBackgroundImage("http://api.shephertz.com/images/0.1/zone-images/Push-Notification.png");
+            pushObj.SendPushTileMessageToUser(userId, tileData, callback);
+         }
        
     }
 }

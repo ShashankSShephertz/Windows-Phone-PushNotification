@@ -1,10 +1,10 @@
-﻿<xapCache source="c:\users\ideapad\documents\visual studio 2010\Projects\Windows-Phone-PushNotification\Windows-Phone-PushNotification\Bin\Debug\Windows_Phone_PushNotification.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="04-08-2013 02:48:46 PM">
-  <file source="c:\users\ideapad\documents\visual studio 2010\Projects\Windows-Phone-PushNotification\Windows-Phone-PushNotification\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="04-08-2013 02:03:49 PM" />
-  <file source="c:\users\ideapad\documents\visual studio 2010\Projects\Windows-Phone-PushNotification\Windows-Phone-PushNotification\Background.png" archivePath="Background.png" lastWriteTime="04-08-2013 01:31:26 PM" />
-  <file source="c:\users\ideapad\documents\visual studio 2010\Projects\Windows-Phone-PushNotification\Windows-Phone-PushNotification\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="04-08-2013 01:31:26 PM" />
-  <file source="c:\users\ideapad\documents\visual studio 2010\Projects\Windows-Phone-PushNotification\Windows-Phone-PushNotification\obj\Debug\Windows-Phone-PushNotification.dll" archivePath="Windows-Phone-PushNotification.dll" lastWriteTime="04-08-2013 02:48:45 PM" />
-  <file source="D:\software\WP7\app42_windows_1.5\app42_windows_1.5\App42_WINDOWS_API_1.5.dll" archivePath="App42_WINDOWS_API_1.5.dll" lastWriteTime="31-07-2013 10:06:32 AM" />
+﻿<xapCache source="D:\GitProject\Windows-Phone-PushNotification\Windows-Phone-PushNotification\Bin\Debug\Windows_Phone_PushNotification.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="01-02-2014 01:12:57 AM">
+  <file source="D:\GitProject\Windows-Phone-PushNotification\Windows-Phone-PushNotification\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="04-08-2013 02:03:49 PM" />
+  <file source="D:\GitProject\Windows-Phone-PushNotification\Windows-Phone-PushNotification\Background.png" archivePath="Background.png" lastWriteTime="04-08-2013 01:31:26 PM" />
+  <file source="D:\GitProject\Windows-Phone-PushNotification\Windows-Phone-PushNotification\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="04-08-2013 01:31:26 PM" />
+  <file source="D:\GitProject\Windows-Phone-PushNotification\Windows-Phone-PushNotification\obj\Debug\Windows-Phone-PushNotification.dll" archivePath="Windows-Phone-PushNotification.dll" lastWriteTime="01-02-2014 01:12:56 AM" />
+  <file source="D:\software\WP7\@@@\App42_WINDOWS_SDK-master\2.0\App42_WINDOWS_SDK_2.0.dll" archivePath="App42_WINDOWS_SDK_2.0.dll" lastWriteTime="23-01-2014 04:32:36 AM" />
   <file source="D:\software\WP7\app42_windows_1.5\app42_windows_1.5\lib\Newtonsoft.Json.WindowsPhone.dll" archivePath="Newtonsoft.Json.WindowsPhone.dll" lastWriteTime="25-12-2012 01:03:18 PM" />
-  <file source="c:\users\ideapad\documents\visual studio 2010\Projects\Windows-Phone-PushNotification\Windows-Phone-PushNotification\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="04-08-2013 01:31:26 PM" />
-  <file source="c:\users\ideapad\documents\visual studio 2010\Projects\Windows-Phone-PushNotification\Windows-Phone-PushNotification\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="04-08-2013 02:48:46 PM" />
+  <file source="D:\GitProject\Windows-Phone-PushNotification\Windows-Phone-PushNotification\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="04-08-2013 01:31:26 PM" />
+  <file source="D:\GitProject\Windows-Phone-PushNotification\Windows-Phone-PushNotification\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="01-02-2014 12:28:10 AM" />
 </xapCache>

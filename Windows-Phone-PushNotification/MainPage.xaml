@@ -23,11 +23,14 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="ApplicationTitle" Text="App42-PushNotification" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Toast Message" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="PageTitle" Text="Push Messages" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Button Content="Send Tost Message" Height="72" HorizontalAlignment="Left" Margin="65,177,0,0" Name="button2" VerticalAlignment="Top" Width="329" Click="SendTost" />
+            <Button Content="Send Live Tile" Height="72" HorizontalAlignment="Left" Margin="65,436,0,0" Name="button1" VerticalAlignment="Top" Width="329" Click="SendTile" />
+        </Grid>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
